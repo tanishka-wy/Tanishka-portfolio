@@ -7,7 +7,7 @@ export const personalInfo = {
   experienceYears: "1+",
   projectsCount: 15,
   contributions: "50k+ Views",
-  bio: "Digital Marketing Trainee and AI Content Strategist passionate about helping agency client brands scale through Search Engine Optimization (SEO), social media engagement, and AI-assisted agentic workflow tools (ChatGPT, Gamma, Canva). Graduate from Banaras Hindu University (BHU) currently driving growth at Techpath Research and Development PVT.",
+  bio: "Digital Marketing Trainee and AI Content Strategist passionate about helping agency client brands scale through Search Engine Optimization (SEO), social media engagement, and AI-assisted agentic workflow tools (ChatGPT, Gamma, Canva).",
   socials: {
     github: "https://github.com/tanishka-wy",
     linkedin: "https://www.linkedin.com/in/tanishka-sharma-4626083b5/",

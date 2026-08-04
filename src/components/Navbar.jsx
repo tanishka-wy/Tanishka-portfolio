@@ -39,24 +39,7 @@ export default function Navbar({ theme, toggleTheme }) {
       }}
     >
       <div className="container" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-        {/* Logo */}
-        <a href="#hero" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
-          <img
-            src="/assets/profile.jpg"
-            alt="Tanishka Sharma"
-            style={{
-              width: '38px',
-              height: '38px',
-              borderRadius: '50%',
-              objectFit: 'cover',
-              border: '2px solid var(--accent-cyan)',
-              boxShadow: 'var(--shadow-glow)'
-            }}
-          />
-          <span style={{ fontWeight: 800, fontSize: '1.2rem', color: 'var(--text-primary)' }}>
-            Tanishka<span style={{ color: 'var(--accent-cyan)' }}>.marketing</span>
-          </span>
-        </a>
+        <div></div>
 
         {/* Desktop Links */}
         <nav style={{ display: 'flex', alignItems: 'center', gap: '2rem' }} className="desktop-nav">

@@ -144,9 +144,7 @@ ${formData.message}`;
             <h3 style={{ fontSize: '1.4rem', marginBottom: '0.5rem', color: 'var(--text-primary)' }}>
               Send a Message
             </h3>
-            <p style={{ fontSize: '0.85rem', color: 'var(--accent-emerald)', marginBottom: '1.5rem', fontWeight: 600 }}>
-              📲 Submitting sends your pre-formatted message directly to WhatsApp (+91 9140496167)!
-            </p>
+
 
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
               <div>
