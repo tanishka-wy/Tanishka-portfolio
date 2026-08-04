@@ -91,7 +91,7 @@ export const experienceData = [
 
 export const educationData = [
   {
-    period: "2021 - 2024",
+    period: "",
     degree: "Bachelor of Arts (B.A.) in Archaeology",
     institution: "Banaras Hindu University (BHU), Varanasi",
     passYear: "2024"

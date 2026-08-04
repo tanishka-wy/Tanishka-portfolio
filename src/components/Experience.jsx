@@ -18,10 +18,7 @@ export default function Experience() {
           {/* Left Column: Education */}
           <div style={{ overflow: 'visible' }}>
             <div className="section-header" style={{ textAlign: 'left', marginBottom: '2rem' }}>
-              <h2 className="section-title" style={{ textAlign: 'left' }}>Education & Academic Background</h2>
-              <p className="section-subtitle" style={{ textAlign: 'left', margin: 0 }}>
-                Academic qualifications, board performance, and degree accomplishments.
-              </p>
+              <h2 className="section-title" style={{ textAlign: 'left', margin: 0 }}>Education</h2>
             </div>
 
             {/* Education Vertical Timeline */}
@@ -77,7 +74,7 @@ export default function Experience() {
                       gap: '0.45rem'
                     }}
                   >
-                    {/* Top Row: Period (Left) & Pass Year (Right) */}
+                    {/* Top Row: Period (Left, if exists) & Pass Year (Right) */}
                     <div style={{
                       display: 'flex',
                       justifyContent: 'space-between',
@@ -85,17 +82,21 @@ export default function Experience() {
                       width: '100%',
                       marginBottom: '0.2rem'
                     }}>
-                      <div style={{
-                        display: 'flex',
-                        alignItems: 'center',
-                        gap: '0.4rem',
-                        fontSize: '0.85rem',
-                        color: 'var(--accent-cyan)',
-                        fontWeight: 600
-                      }}>
-                        <Calendar size={14} />
-                        <span>{edu.period}</span>
-                      </div>
+                      {edu.period ? (
+                        <div style={{
+                          display: 'flex',
+                          alignItems: 'center',
+                          gap: '0.4rem',
+                          fontSize: '0.85rem',
+                          color: 'var(--accent-cyan)',
+                          fontWeight: 600
+                        }}>
+                          <Calendar size={14} />
+                          <span>{edu.period}</span>
+                        </div>
+                      ) : (
+                        <div />
+                      )}
 
                       {/* Pass Year on Top Right */}
                       <div style={{
@@ -138,10 +139,7 @@ export default function Experience() {
           {/* Right Column: Work Experience */}
           <div style={{ overflow: 'visible' }}>
             <div className="section-header" style={{ textAlign: 'left', marginBottom: '2rem' }}>
-              <h2 className="section-title" style={{ textAlign: 'left' }}>Work Experience</h2>
-              <p className="section-subtitle" style={{ textAlign: 'left', margin: 0 }}>
-                Hands-on digital marketing agency training, client SEO strategies, and content growth.
-              </p>
+              <h2 className="section-title" style={{ textAlign: 'left', margin: 0 }}>Work Experience</h2>
             </div>
 
             {/* Work Experience Vertical Timeline */}
