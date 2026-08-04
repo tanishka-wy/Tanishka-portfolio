@@ -1,8 +1,18 @@
 import React from 'react';
-import { CircleDot, Calendar, MapPin, CheckCircle, ExternalLink } from 'lucide-react';
+import { Calendar, MapPin, CheckCircle, ExternalLink } from 'lucide-react';
 import { experienceData, educationData } from '../data/portfolioData';
 
 export default function Experience() {
+  const headingStyle = {
+    fontSize: '2rem',
+    fontWeight: 700,
+    color: 'var(--text-primary)',
+    lineHeight: 1.2,
+    letterSpacing: '-0.02em',
+    textAlign: 'left',
+    margin: 0
+  };
+
   return (
     <section id="experience" className="section-padding" style={{ overflow: 'visible', height: 'auto', minHeight: 'auto' }}>
       <div className="container" style={{ overflow: 'visible' }}>
@@ -18,7 +28,7 @@ export default function Experience() {
           {/* Left Column: Education */}
           <div style={{ overflow: 'visible' }}>
             <div className="section-header" style={{ textAlign: 'left', marginBottom: '2rem' }}>
-              <h2 className="section-title" style={{ textAlign: 'left', margin: 0 }}>Education</h2>
+              <h2 className="section-title" style={headingStyle}>Education</h2>
             </div>
 
             {/* Education Vertical Timeline */}
@@ -42,27 +52,21 @@ export default function Experience() {
 
               {educationData.map((edu, index) => (
                 <div key={index} style={{ position: 'relative' }}>
-                  {/* Bullet Point Marker */}
+                  {/* Glowing Dot Marker */}
                   <div style={{
                     position: 'absolute',
                     left: '-3rem',
-                    top: '1.2rem',
+                    top: '1.4rem',
                     marginLeft: '15px',
                     transform: 'translateX(-50%)',
-                    width: '28px',
-                    height: '28px',
+                    width: '14px',
+                    height: '14px',
                     borderRadius: '50%',
-                    background: 'var(--bg-primary)',
-                    border: '2px solid var(--accent-cyan)',
-                    boxShadow: 'var(--shadow-glow)',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    color: 'var(--accent-cyan)',
+                    background: 'var(--accent-cyan)',
+                    border: '3px solid var(--bg-primary)',
+                    boxShadow: '0 0 12px var(--accent-cyan)',
                     zIndex: 2
-                  }}>
-                    <CircleDot size={14} />
-                  </div>
+                  }} />
 
                   {/* Card Container */}
                   <div
@@ -139,7 +143,7 @@ export default function Experience() {
           {/* Right Column: Work Experience */}
           <div style={{ overflow: 'visible' }}>
             <div className="section-header" style={{ textAlign: 'left', marginBottom: '2rem' }}>
-              <h2 className="section-title" style={{ textAlign: 'left', margin: 0 }}>Work Experience</h2>
+              <h2 className="section-title" style={headingStyle}>Work Experience</h2>
             </div>
 
             {/* Work Experience Vertical Timeline */}
@@ -163,27 +167,21 @@ export default function Experience() {
 
               {experienceData.map((exp, index) => (
                 <div key={index} style={{ position: 'relative' }}>
-                  {/* Bullet Point Marker */}
+                  {/* Glowing Dot Marker */}
                   <div style={{
                     position: 'absolute',
                     left: '-3rem',
-                    top: '1.2rem',
+                    top: '1.4rem',
                     marginLeft: '15px',
                     transform: 'translateX(-50%)',
-                    width: '28px',
-                    height: '28px',
+                    width: '14px',
+                    height: '14px',
                     borderRadius: '50%',
-                    background: 'var(--bg-primary)',
-                    border: '2px solid var(--accent-cyan)',
-                    boxShadow: 'var(--shadow-glow)',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    color: 'var(--accent-cyan)',
+                    background: 'var(--accent-cyan)',
+                    border: '3px solid var(--bg-primary)',
+                    boxShadow: '0 0 12px var(--accent-cyan)',
                     zIndex: 2
-                  }}>
-                    <CircleDot size={14} />
-                  </div>
+                  }} />
 
                   <div
                     className="glass-card"
