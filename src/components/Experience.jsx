@@ -1,5 +1,5 @@
 import React from 'react';
-import { Briefcase, Calendar, MapPin, CheckCircle, ExternalLink, GraduationCap } from 'lucide-react';
+import { CircleDot, Calendar, MapPin, CheckCircle, ExternalLink } from 'lucide-react';
 import { experienceData, educationData } from '../data/portfolioData';
 
 export default function Experience() {
@@ -45,15 +45,15 @@ export default function Experience() {
 
               {educationData.map((edu, index) => (
                 <div key={index} style={{ position: 'relative' }}>
-                  {/* Graduation Cap Circular Icon Badge Marker */}
+                  {/* Bullet Point Marker */}
                   <div style={{
                     position: 'absolute',
                     left: '-3rem',
                     top: '1.2rem',
                     marginLeft: '15px',
                     transform: 'translateX(-50%)',
-                    width: '32px',
-                    height: '32px',
+                    width: '28px',
+                    height: '28px',
                     borderRadius: '50%',
                     background: 'var(--bg-primary)',
                     border: '2px solid var(--accent-cyan)',
@@ -64,10 +64,10 @@ export default function Experience() {
                     color: 'var(--accent-cyan)',
                     zIndex: 2
                   }}>
-                    <GraduationCap size={16} />
+                    <CircleDot size={14} />
                   </div>
 
-                  {/* Card Container with Flexbox Column Layout */}
+                  {/* Card Container */}
                   <div
                     className="glass-card"
                     style={{
@@ -77,16 +77,38 @@ export default function Experience() {
                       gap: '0.45rem'
                     }}
                   >
+                    {/* Top Row: Period (Left) & Pass Year (Right) */}
                     <div style={{
                       display: 'flex',
+                      justifyContent: 'space-between',
                       alignItems: 'center',
-                      gap: '0.4rem',
-                      fontSize: '0.85rem',
-                      color: 'var(--accent-cyan)',
-                      fontWeight: 600
+                      width: '100%',
+                      marginBottom: '0.2rem'
                     }}>
-                      <Calendar size={14} />
-                      <span>{edu.period}</span>
+                      <div style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: '0.4rem',
+                        fontSize: '0.85rem',
+                        color: 'var(--accent-cyan)',
+                        fontWeight: 600
+                      }}>
+                        <Calendar size={14} />
+                        <span>{edu.period}</span>
+                      </div>
+
+                      {/* Pass Year on Top Right */}
+                      <div style={{
+                        fontSize: '0.82rem',
+                        fontWeight: 700,
+                        color: 'var(--accent-cyan)',
+                        background: 'rgba(34, 211, 238, 0.12)',
+                        border: '1px solid rgba(34, 211, 238, 0.3)',
+                        padding: '0.2rem 0.65rem',
+                        borderRadius: 'var(--radius-full)'
+                      }}>
+                        Pass Year: {edu.passYear}
+                      </div>
                     </div>
 
                     <h3 style={{
@@ -143,15 +165,15 @@ export default function Experience() {
 
               {experienceData.map((exp, index) => (
                 <div key={index} style={{ position: 'relative' }}>
-                  {/* Briefcase Icon Marker */}
+                  {/* Bullet Point Marker */}
                   <div style={{
                     position: 'absolute',
                     left: '-3rem',
                     top: '1.2rem',
                     marginLeft: '15px',
                     transform: 'translateX(-50%)',
-                    width: '32px',
-                    height: '32px',
+                    width: '28px',
+                    height: '28px',
                     borderRadius: '50%',
                     background: 'var(--bg-primary)',
                     border: '2px solid var(--accent-cyan)',
@@ -162,7 +184,7 @@ export default function Experience() {
                     color: 'var(--accent-cyan)',
                     zIndex: 2
                   }}>
-                    <Briefcase size={16} />
+                    <CircleDot size={14} />
                   </div>
 
                   <div
