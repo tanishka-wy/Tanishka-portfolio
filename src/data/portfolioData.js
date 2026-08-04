@@ -97,13 +97,13 @@ export const educationData = [
     passYear: "2024"
   },
   {
-    period: "12th Standard",
+    period: "",
     degree: "Senior Secondary (12th)",
     institution: "National Institute of Open Schooling (NIOS)",
     passYear: "2021"
   },
   {
-    period: "10th Standard",
+    period: "",
     degree: "Secondary (10th)",
     institution: "Bihar Board of Open Schooling & Examination, Patna",
     passYear: "2019"
