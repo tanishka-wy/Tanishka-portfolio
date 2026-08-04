@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Cpu, Code2, Server, Box, CheckCircle2, Sparkles } from 'lucide-react';
 import { skillCategories, skillsData } from '../data/portfolioData';
 
 export default function Skills() {
@@ -13,10 +12,7 @@ export default function Skills() {
     <section id="skills" className="section-padding" style={{ background: 'var(--bg-secondary)' }}>
       <div className="container">
         <div className="section-header">
-          <h2 className="section-title">Technical Capabilities</h2>
-          <p className="section-subtitle">
-            A comprehensive matrix of technologies, frameworks, and engineering practices I utilize.
-          </p>
+          <h2 className="section-title">Core Capabilities</h2>
         </div>
 
         {/* Category Tabs */}
@@ -55,38 +51,39 @@ export default function Skills() {
           gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))',
           gap: '1.5rem'
         }}>
-          {filteredSkills.map((skill, index) => (
-            <div key={skill.name} className="glass-card" style={{ padding: '1.5rem' }}>
-              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '0.8rem' }}>
-                <span style={{ fontWeight: 700, fontSize: '1.05rem', color: 'var(--text-primary)' }}>
-                  {skill.name}
-                </span>
-                <span style={{ fontSize: '0.85rem', fontWeight: 600, color: 'var(--accent-cyan)' }}>
-                  {skill.level}%
-                </span>
+          {filteredSkills.map((skill) => (
+            <div
+              key={skill.name}
+              className="glass-card"
+              style={{
+                padding: '1.5rem',
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '0.8rem'
+              }}
+            >
+              <div style={{ fontWeight: 700, fontSize: '1.08rem', color: 'var(--text-primary)' }}>
+                {skill.name}
               </div>
 
-              {/* Progress Meter Bar */}
-              <div style={{
-                height: '6px',
-                width: '100%',
-                background: 'var(--border-color)',
-                borderRadius: 'var(--radius-full)',
-                overflow: 'hidden',
-                marginBottom: '0.8rem'
-              }}>
-                <div style={{
-                  height: '100%',
-                  width: `${skill.level}%`,
-                  background: 'var(--gradient-primary)',
-                  borderRadius: 'var(--radius-full)',
-                  transition: 'width 1s ease-out'
-                }} />
+              {/* Tag-style Pills Row */}
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.4rem' }}>
+                {skill.bullets.map((bullet) => (
+                  <span
+                    key={bullet}
+                    style={{
+                      padding: '0.25rem 0.65rem',
+                      borderRadius: 'var(--radius-sm)',
+                      background: 'rgba(255, 255, 255, 0.05)',
+                      color: 'var(--accent-indigo)',
+                      fontSize: '0.78rem',
+                      fontWeight: 600
+                    }}
+                  >
+                    {bullet}
+                  </span>
+                ))}
               </div>
-
-              <p style={{ fontSize: '0.82rem', color: 'var(--text-secondary)' }}>
-                {skill.highlight}
-              </p>
             </div>
           ))}
         </div>

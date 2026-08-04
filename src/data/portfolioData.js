@@ -21,14 +21,15 @@ export const personalInfo = {
 export const skillCategories = ["All", "Digital Marketing & SEO", "AI & Content Tools", "Management & Ops"];
 
 export const skillsData = [
-  { name: "ChatGPT & AI Prompting", level: 95, category: "AI & Content Tools", icon: "Cpu", highlight: "AI as a thought partner, Content drafting, Research automation" },
-  { name: "Search Engine Optimization (SEO)", level: 92, category: "Digital Marketing & SEO", icon: "Sparkles", highlight: "Keyword research, On-page SEO, Content optimization" },
-  { name: "Canva Design", level: 94, category: "AI & Content Tools", icon: "Code2", highlight: "Social media graphics, Brand banners, Infographics" },
-  { name: "Gamma (AI Presentations)", level: 90, category: "AI & Content Tools", icon: "FileCode2", highlight: "AI deck generation, Pitch presentations, Interactive visuals" },
-  { name: "Digital Marketing Media", level: 92, category: "Digital Marketing & SEO", icon: "Server", highlight: "Social media campaigns, Brand awareness, Post impressions" },
-  { name: "E-Commerce Marketing", level: 88, category: "Digital Marketing & SEO", icon: "Box", highlight: "Product promotion, Conversion rate optimization" },
-  { name: "Client Management & Ops", level: 88, category: "Management & Ops", icon: "CheckCircle2", highlight: "Client communications, Operational management, Stakeholder updates" },
-  { name: "MS Excel & Computer Skills", level: 85, category: "Management & Ops", icon: "Database", highlight: "Data entry, Campaign analytics tracking, Spreadsheet reporting" },
+  { name: "ChatGPT & AI Prompting", category: "AI & Content Tools", icon: "Cpu", bullets: ["AI as a thought partner", "Content drafting", "Research automation"] },
+  { name: "Agents & GenAI", category: "AI & Content Tools", icon: "Sparkles", bullets: ["AI agent workflows", "Prompt engineering", "GenAI tool integration"] },
+  { name: "Search Engine Optimization (SEO)", category: "Digital Marketing & SEO", icon: "Sparkles", bullets: ["Keyword research", "On-page SEO", "Content optimization"] },
+  { name: "Canva Design", category: "AI & Content Tools", icon: "Code2", bullets: ["Social media graphics", "Brand banners", "Infographics"] },
+  { name: "Gamma (AI Presentations)", category: "AI & Content Tools", icon: "FileCode2", bullets: ["AI deck generation", "Pitch presentations", "Interactive visuals"] },
+  { name: "Digital Marketing Media", category: "Digital Marketing & SEO", icon: "Server", bullets: ["Social media campaigns", "Brand awareness", "Post impressions"] },
+  { name: "E-Commerce Marketing", category: "Digital Marketing & SEO", icon: "Box", bullets: ["Product promotion", "Conversion rate optimization"] },
+  { name: "Client Management & Ops", category: "Management & Ops", icon: "CheckCircle2", bullets: ["Client communications", "Operational management", "Stakeholder updates"] },
+  { name: "MS Excel & Computer Skills", category: "Management & Ops", icon: "Database", bullets: ["Data entry", "Campaign analytics tracking", "Spreadsheet reporting"] },
 ];
 
 export const projectCategories = ["All", "AI Content", "Digital Marketing"];
