@@ -75,7 +75,7 @@ export default function Experience() {
                       padding: '0.85rem 1.2rem',
                       display: 'flex',
                       flexDirection: 'column',
-                      gap: '0.3rem'
+                      gap: '0.35rem'
                     }}
                   >
                     {/* Header Row: Degree (Left) & Pass Year (Right) */}
@@ -119,6 +119,27 @@ export default function Experience() {
                     }}>
                       {edu.institution}
                     </div>
+
+                    {/* Skill Tags */}
+                    {edu.skills && edu.skills.length > 0 && (
+                      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.4rem', marginTop: '0.2rem' }}>
+                        {edu.skills.map((skill) => (
+                          <span
+                            key={skill}
+                            style={{
+                              padding: '0.25rem 0.65rem',
+                              borderRadius: 'var(--radius-sm)',
+                              background: 'rgba(255, 255, 255, 0.05)',
+                              color: 'var(--accent-indigo)',
+                              fontSize: '0.78rem',
+                              fontWeight: 600
+                            }}
+                          >
+                            {skill}
+                          </span>
+                        ))}
+                      </div>
+                    )}
                   </div>
                 </div>
               ))}

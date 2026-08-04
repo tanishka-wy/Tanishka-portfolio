@@ -94,18 +94,21 @@ export const educationData = [
     period: "",
     degree: "Bachelor of Arts (B.A.) in Archaeology",
     institution: "Banaras Hindu University (BHU), Varanasi",
-    passYear: "2024"
+    passYear: "2024",
+    skills: ["Research & analysis", "Academic writing", "Critical thinking"]
   },
   {
     period: "",
     degree: "Senior Secondary (12th)",
     institution: "National Institute of Open Schooling (NIOS)",
-    passYear: "2021"
+    passYear: "2021",
+    skills: ["Analytical thinking", "Communication skills", "Time management"]
   },
   {
     period: "",
     degree: "Secondary (10th)",
     institution: "Bihar Board of Open Schooling & Examination, Patna",
-    passYear: "2019"
+    passYear: "2019",
+    skills: ["Reading habit & vocabulary building", "Self-discipline & study habits", "Basic computer literacy"]
   }
 ];
