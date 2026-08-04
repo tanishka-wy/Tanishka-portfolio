@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Sun, Moon, Menu, X, Code2, Terminal as TerminalIcon } from 'lucide-react';
+import { Sun, Moon, Menu, X } from 'lucide-react';
 import { personalInfo } from '../data/portfolioData';
 
 export default function Navbar({ theme, toggleTheme }) {
@@ -39,7 +39,17 @@ export default function Navbar({ theme, toggleTheme }) {
       }}
     >
       <div className="container" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-        <div></div>
+        {/* Brand Name on Top Left */}
+        <a href="#hero" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center' }}>
+          <span style={{
+            fontWeight: 800,
+            fontSize: '1.2rem',
+            color: 'var(--text-primary)',
+            letterSpacing: '-0.01em'
+          }}>
+            Tanishka<span style={{ color: 'var(--accent-cyan)' }}> Sharma</span>
+          </span>
+        </a>
 
         {/* Desktop Links */}
         <nav style={{ display: 'flex', alignItems: 'center', gap: '2rem' }} className="desktop-nav">
@@ -62,17 +72,8 @@ export default function Navbar({ theme, toggleTheme }) {
           ))}
         </nav>
 
-          {/* Action Controls */}
+        {/* Action Controls on Top Right */}
         <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-          <span style={{
-            fontWeight: 800,
-            fontSize: '1.05rem',
-            color: 'var(--text-primary)',
-            letterSpacing: '-0.01em'
-          }}>
-            Tanishka<span style={{ color: 'var(--accent-cyan)' }}> Sharma</span>
-          </span>
-
           <button
             onClick={toggleTheme}
             aria-label="Toggle theme"
