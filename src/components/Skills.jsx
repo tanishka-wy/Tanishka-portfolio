@@ -1,48 +1,12 @@
-import React, { useState } from 'react';
-import { skillCategories, skillsData } from '../data/portfolioData';
+import React from 'react';
+import { skillsData } from '../data/portfolioData';
 
 export default function Skills() {
-  const [activeCategory, setActiveCategory] = useState('All');
-
-  const filteredSkills = activeCategory === 'All'
-    ? skillsData
-    : skillsData.filter(s => s.category === activeCategory);
-
   return (
     <section id="skills" className="section-padding" style={{ background: 'var(--bg-secondary)' }}>
       <div className="container">
-        <div className="section-header">
+        <div className="section-header" style={{ marginBottom: '1.5rem' }}>
           <h2 className="section-title">Core Capabilities</h2>
-        </div>
-
-        {/* Category Tabs */}
-        <div style={{
-          display: 'flex',
-          justifyContent: 'center',
-          flexWrap: 'wrap',
-          gap: '0.6rem',
-          marginBottom: '3rem'
-        }}>
-          {skillCategories.map((cat) => (
-            <button
-              key={cat}
-              onClick={() => setActiveCategory(cat)}
-              style={{
-                padding: '0.5rem 1.2rem',
-                borderRadius: 'var(--radius-full)',
-                border: '1px solid',
-                borderColor: activeCategory === cat ? 'var(--accent-cyan)' : 'var(--border-color)',
-                background: activeCategory === cat ? 'rgba(34, 211, 238, 0.15)' : 'var(--bg-card)',
-                color: activeCategory === cat ? 'var(--accent-cyan)' : 'var(--text-secondary)',
-                fontWeight: 600,
-                fontSize: '0.9rem',
-                cursor: 'pointer',
-                transition: 'all var(--transition-fast)'
-              }}
-            >
-              {cat}
-            </button>
-          ))}
         </div>
 
         {/* Skills Grid */}
@@ -51,7 +15,7 @@ export default function Skills() {
           gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))',
           gap: '1.5rem'
         }}>
-          {filteredSkills.map((skill) => (
+          {skillsData.map((skill) => (
             <div
               key={skill.name}
               className="glass-card"

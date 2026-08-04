@@ -117,7 +117,18 @@ export default function Experience() {
                       fontWeight: 600,
                       lineHeight: 1.3
                     }}>
-                      {edu.institution}
+                      {edu.institution.includes('Banaras Hindu University') ? (
+                        <a
+                          href="https://www.bhu.ac.in/Site/Home/1_2_16_Main-Site"
+                          target="_blank"
+                          rel="noreferrer"
+                          style={{ color: 'var(--accent-indigo)', textDecoration: 'none', borderBottom: '1px dotted var(--accent-indigo)' }}
+                        >
+                          {edu.institution}
+                        </a>
+                      ) : (
+                        edu.institution
+                      )}
                     </div>
 
                     {/* Skill Tags */}

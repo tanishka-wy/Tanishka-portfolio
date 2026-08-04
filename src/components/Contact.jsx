@@ -99,7 +99,7 @@ ${formData.message}`;
                 <div>
                   <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>WhatsApp / Phone</div>
                   <a href="https://wa.me/919140496167" target="_blank" rel="noreferrer" style={{ color: 'var(--accent-emerald)', textDecoration: 'none', fontWeight: 600 }}>
-                    +91 9140496167 (Click to Chat)
+                    +91 9140496167 (Connect)
                   </a>
                 </div>
               </div>

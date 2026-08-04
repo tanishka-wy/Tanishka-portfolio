@@ -64,6 +64,15 @@ export default function Navbar({ theme, toggleTheme }) {
 
           {/* Action Controls */}
         <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+          <span style={{
+            fontWeight: 800,
+            fontSize: '1.05rem',
+            color: 'var(--text-primary)',
+            letterSpacing: '-0.01em'
+          }}>
+            Tanishka<span style={{ color: 'var(--accent-cyan)' }}> Sharma</span>
+          </span>
+
           <button
             onClick={toggleTheme}
             aria-label="Toggle theme"
