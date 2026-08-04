@@ -27,25 +27,25 @@ export default function Experience() {
         }}>
           {/* Left Column: Education */}
           <div style={{ overflow: 'visible' }}>
-            <div className="section-header" style={{ textAlign: 'left', marginBottom: '2rem' }}>
+            <div className="section-header" style={{ textAlign: 'left', marginBottom: '1.5rem' }}>
               <h2 className="section-title" style={headingStyle}>Education</h2>
             </div>
 
             {/* Education Vertical Timeline */}
             <div style={{
               position: 'relative',
-              paddingLeft: '3rem',
+              paddingLeft: '2.5rem',
               display: 'flex',
               flexDirection: 'column',
-              gap: '1.8rem',
+              gap: '1rem',
               overflow: 'visible'
             }}>
               {/* Vertical Connecting Line */}
               <div style={{
                 position: 'absolute',
-                top: '1rem',
-                bottom: '1rem',
-                left: '15px',
+                top: '0.8rem',
+                bottom: '0.8rem',
+                left: '12px',
                 width: '2px',
                 background: 'linear-gradient(180deg, var(--accent-cyan) 0%, var(--accent-indigo) 100%)'
               }} />
@@ -55,82 +55,67 @@ export default function Experience() {
                   {/* Glowing Dot Marker */}
                   <div style={{
                     position: 'absolute',
-                    left: '-3rem',
-                    top: '1.4rem',
-                    marginLeft: '15px',
+                    left: '-2.5rem',
+                    top: '1.1rem',
+                    marginLeft: '12px',
                     transform: 'translateX(-50%)',
-                    width: '14px',
-                    height: '14px',
+                    width: '12px',
+                    height: '12px',
                     borderRadius: '50%',
                     background: 'var(--accent-cyan)',
-                    border: '3px solid var(--bg-primary)',
-                    boxShadow: '0 0 12px var(--accent-cyan)',
+                    border: '2px solid var(--bg-primary)',
+                    boxShadow: '0 0 10px var(--accent-cyan)',
                     zIndex: 2
                   }} />
 
-                  {/* Card Container */}
+                  {/* Compact Card Container */}
                   <div
                     className="glass-card"
                     style={{
-                      padding: '1.4rem 1.6rem',
+                      padding: '0.85rem 1.2rem',
                       display: 'flex',
                       flexDirection: 'column',
-                      gap: '0.45rem'
+                      gap: '0.3rem'
                     }}
                   >
-                    {/* Top Row: Period (Left, if exists) & Pass Year (Right) */}
+                    {/* Header Row: Degree (Left) & Pass Year (Right) */}
                     <div style={{
                       display: 'flex',
                       justifyContent: 'space-between',
                       alignItems: 'center',
-                      width: '100%',
-                      marginBottom: '0.2rem'
+                      gap: '0.8rem'
                     }}>
-                      {edu.period ? (
-                        <div style={{
-                          display: 'flex',
-                          alignItems: 'center',
-                          gap: '0.4rem',
-                          fontSize: '0.85rem',
-                          color: 'var(--accent-cyan)',
-                          fontWeight: 600
-                        }}>
-                          <Calendar size={14} />
-                          <span>{edu.period}</span>
-                        </div>
-                      ) : (
-                        <div />
-                      )}
+                      <h3 style={{
+                        fontSize: '1.05rem',
+                        color: 'var(--text-primary)',
+                        fontWeight: 700,
+                        margin: 0,
+                        lineHeight: 1.3
+                      }}>
+                        {edu.degree}
+                      </h3>
 
-                      {/* Pass Year on Top Right */}
-                      <div style={{
-                        fontSize: '0.82rem',
+                      {/* Pass Year Badge */}
+                      <span style={{
+                        fontSize: '0.78rem',
                         fontWeight: 700,
                         color: 'var(--accent-cyan)',
                         background: 'rgba(34, 211, 238, 0.12)',
                         border: '1px solid rgba(34, 211, 238, 0.3)',
-                        padding: '0.2rem 0.65rem',
-                        borderRadius: 'var(--radius-full)'
+                        padding: '0.18rem 0.6rem',
+                        borderRadius: 'var(--radius-full)',
+                        whiteSpace: 'nowrap',
+                        flexShrink: 0
                       }}>
                         Pass Year: {edu.passYear}
-                      </div>
+                      </span>
                     </div>
 
-                    <h3 style={{
-                      fontSize: '1.2rem',
-                      color: 'var(--text-primary)',
-                      fontWeight: 700,
-                      margin: 0,
-                      lineHeight: 1.3
-                    }}>
-                      {edu.degree}
-                    </h3>
-
                     <div style={{
-                      fontSize: '0.92rem',
+                      fontSize: '0.88rem',
                       color: 'var(--accent-indigo)',
                       fontWeight: 600,
-                      lineHeight: 1.4
+                      lineHeight: 1.3
                     }}>
                       {edu.institution}
                     </div>
@@ -142,14 +127,14 @@ export default function Experience() {
 
           {/* Right Column: Work Experience */}
           <div style={{ overflow: 'visible' }}>
-            <div className="section-header" style={{ textAlign: 'left', marginBottom: '2rem' }}>
+            <div className="section-header" style={{ textAlign: 'left', marginBottom: '1.5rem' }}>
               <h2 className="section-title" style={headingStyle}>Work Experience</h2>
             </div>
 
             {/* Work Experience Vertical Timeline */}
             <div style={{
               position: 'relative',
-              paddingLeft: '3rem',
+              paddingLeft: '2.5rem',
               display: 'flex',
               flexDirection: 'column',
               gap: '1.8rem',
@@ -160,7 +145,7 @@ export default function Experience() {
                 position: 'absolute',
                 top: '1rem',
                 bottom: '1rem',
-                left: '15px',
+                left: '12px',
                 width: '2px',
                 background: 'linear-gradient(180deg, var(--accent-cyan) 0%, var(--accent-indigo) 100%)'
               }} />
@@ -170,9 +155,9 @@ export default function Experience() {
                   {/* Glowing Dot Marker */}
                   <div style={{
                     position: 'absolute',
-                    left: '-3rem',
+                    left: '-2.5rem',
                     top: '1.4rem',
-                    marginLeft: '15px',
+                    marginLeft: '12px',
                     transform: 'translateX(-50%)',
                     width: '14px',
                     height: '14px',
