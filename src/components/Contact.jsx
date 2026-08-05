@@ -110,19 +110,10 @@ ${formData.message}`;
             </h4>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.8rem' }}>
               <a
-                href="https://wa.me/919140496167"
-                target="_blank"
-                rel="noreferrer"
-                className="btn btn-primary"
-                style={{ padding: '0.6rem 1rem', fontSize: '0.85rem' }}
-              >
-                <MessageSquare size={18} /> WhatsApp
-              </a>
-              <a
                 href={personalInfo.socials.linkedin}
                 target="_blank"
                 rel="noreferrer"
-                className="btn btn-secondary"
+                className="btn btn-primary"
                 style={{ padding: '0.6rem 1rem', fontSize: '0.85rem' }}
               >
                 <Linkedin size={18} /> LinkedIn

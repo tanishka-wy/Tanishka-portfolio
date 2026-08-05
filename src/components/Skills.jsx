@@ -6,7 +6,7 @@ export default function Skills() {
     <section id="skills" className="section-padding" style={{ background: 'var(--bg-secondary)' }}>
       <div className="container">
         <div className="section-header" style={{ marginBottom: '1.5rem' }}>
-          <h2 className="section-title">Core Capabilities</h2>
+          <h2 className="section-title">Skills</h2>
         </div>
 
         {/* Skills Grid */}
