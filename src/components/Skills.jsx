@@ -19,7 +19,9 @@ export default function Skills() {
       <div style={{
         display: 'flex',
         flexDirection: 'column',
-        gap: '1.2rem'
+        gap: '1.2rem',
+        flex: 1,
+        justifyContent: 'space-between'
       }}>
         {skillsCategoriesData.map((category) => {
           const IconComponent = iconMap[category.icon] || Sparkles;
