@@ -40,13 +40,7 @@ export default function App() {
 
         {/* Side-by-Side Equal Size Skills and Work Experience */}
         <section className="section-padding" style={{ background: 'var(--bg-secondary)', overflow: 'visible' }}>
-          <div className="container" style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))',
-            gap: '3.5rem',
-            alignItems: 'stretch',
-            overflow: 'visible'
-          }}>
+          <div className="container side-by-side-grid" style={{ overflow: 'visible' }}>
             <Skills />
             <WorkExperience />
           </div>

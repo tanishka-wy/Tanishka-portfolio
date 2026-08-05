@@ -238,7 +238,17 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Responsive Breakpoints */
-@media (max-width: 768px) {
+.side-by-side-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3.5rem;
+  align-items: stretch;
+}
+
+@media (max-width: 900px) {
+  .side-by-side-grid {
+    grid-template-columns: 1fr;
+  }
   .section-title {
     font-size: 2rem;
   }
