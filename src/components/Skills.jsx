@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Cpu, Sparkles, Code2, FolderPlus, Server, Box, CheckCircle2, Database, FileCode2, X, ChevronLeft, ChevronRight, FileText } from 'lucide-react';
+import { Cpu, Sparkles, Code2, FolderPlus, Server, Box, CheckCircle2, Database, FileCode2, X, ChevronLeft, ChevronRight, FileText, CheckCircle } from 'lucide-react';
 import { skillsData } from '../data/portfolioData';
 
 const iconMap = {
@@ -51,8 +51,8 @@ export default function Skills() {
       {/* Skills Grid */}
       <div style={{
         display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fill, minmax(160px, 1fr))',
-        gap: '0.75rem'
+        gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr))',
+        gap: '1.2rem'
       }}>
           {skillsData.map((skill) => {
             const IconComponent = iconMap[skill.icon] || Sparkles;
@@ -63,10 +63,10 @@ export default function Skills() {
                 className="glass-card"
                 onClick={() => isClickable && openSkillModal(skill)}
                 style={{
-                  padding: '0.85rem 1rem',
+                  padding: '1.2rem 1.4rem',
                   display: 'flex',
                   flexDirection: 'column',
-                  gap: '0.5rem',
+                  gap: '0.8rem',
                   cursor: isClickable ? 'pointer' : 'default',
                   border: isClickable ? '1px solid rgba(34, 211, 238, 0.4)' : '1px solid var(--border-color)',
                   transition: 'all 0.2s ease'
@@ -74,7 +74,7 @@ export default function Skills() {
                 onMouseEnter={(e) => {
                   if (isClickable) {
                     e.currentTarget.style.transform = 'translateY(-3px)';
-                    e.currentTarget.style.boxShadow = '0 8px 16px rgba(34, 211, 238, 0.2)';
+                    e.currentTarget.style.boxShadow = '0 8px 20px rgba(34, 211, 238, 0.2)';
                   }
                 }}
                 onMouseLeave={(e) => {
@@ -84,34 +84,34 @@ export default function Skills() {
                   }
                 }}
               >
-                <div style={{ fontWeight: 700, fontSize: '0.92rem', color: 'var(--text-primary)', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '0.4rem' }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', minWidth: 0 }}>
-                    <IconComponent size={16} color="var(--accent-cyan)" style={{ flexShrink: 0 }} />
-                    <span style={{ whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{skill.name}</span>
+                {/* Header matching Work Experience */}
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: '0.6rem' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                    <IconComponent size={18} color="var(--accent-cyan)" style={{ flexShrink: 0 }} />
+                    <h3 style={{ fontSize: '1.1rem', color: 'var(--text-primary)', margin: 0, fontWeight: 700 }}>
+                      {skill.name}
+                    </h3>
                   </div>
                   {isClickable && (
-                    <span style={{ fontSize: '0.68rem', padding: '0.1rem 0.4rem', borderRadius: 'var(--radius-full)', background: 'rgba(34, 211, 238, 0.15)', color: 'var(--accent-cyan)', fontWeight: 600, flexShrink: 0 }}>
-                      Deck ↗
+                    <span style={{ fontSize: '0.72rem', padding: '0.15rem 0.55rem', borderRadius: 'var(--radius-full)', background: 'rgba(34, 211, 238, 0.15)', color: 'var(--accent-cyan)', fontWeight: 600, flexShrink: 0 }}>
+                      Interactive Deck ↗
                     </span>
                   )}
                 </div>
 
-                {/* Tag-style Pills Row */}
-                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.3rem' }}>
-                  {skill.bullets.map((bullet) => (
-                    <span
-                      key={bullet}
-                      style={{
-                        padding: '0.15rem 0.45rem',
-                        borderRadius: 'var(--radius-sm)',
-                        background: 'rgba(255, 255, 255, 0.05)',
-                        color: 'var(--accent-indigo)',
-                        fontSize: '0.72rem',
-                        fontWeight: 600
-                      }}
-                    >
-                      {bullet}
-                    </span>
+                {/* Bullets List matching Work Experience achievements */}
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
+                  {skill.bullets.map((bullet, idx) => (
+                    <div key={idx} style={{
+                      display: 'flex',
+                      alignItems: 'flex-start',
+                      gap: '0.5rem',
+                      fontSize: '0.86rem',
+                      color: 'var(--text-secondary)'
+                    }}>
+                      <CheckCircle size={14} color="var(--accent-cyan)" style={{ marginTop: '0.2rem', flexShrink: 0 }} />
+                      <span>{bullet}</span>
+                    </div>
                   ))}
                 </div>
               </div>
