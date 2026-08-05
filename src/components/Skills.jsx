@@ -51,9 +51,8 @@ export default function Skills() {
       {/* Skills Grid */}
       <div style={{
         display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fill, minmax(240px, 1fr))',
-        gap: '1.2rem',
-        flex: 1
+        gridTemplateColumns: 'repeat(auto-fill, minmax(160px, 1fr))',
+        gap: '0.75rem'
       }}>
           {skillsData.map((skill) => {
             const IconComponent = iconMap[skill.icon] || Sparkles;
@@ -64,18 +63,18 @@ export default function Skills() {
                 className="glass-card"
                 onClick={() => isClickable && openSkillModal(skill)}
                 style={{
-                  padding: '1.5rem',
+                  padding: '0.85rem 1rem',
                   display: 'flex',
                   flexDirection: 'column',
-                  gap: '0.8rem',
+                  gap: '0.5rem',
                   cursor: isClickable ? 'pointer' : 'default',
                   border: isClickable ? '1px solid rgba(34, 211, 238, 0.4)' : '1px solid var(--border-color)',
                   transition: 'all 0.2s ease'
                 }}
                 onMouseEnter={(e) => {
                   if (isClickable) {
-                    e.currentTarget.style.transform = 'translateY(-4px)';
-                    e.currentTarget.style.boxShadow = '0 10px 20px rgba(34, 211, 238, 0.2)';
+                    e.currentTarget.style.transform = 'translateY(-3px)';
+                    e.currentTarget.style.boxShadow = '0 8px 16px rgba(34, 211, 238, 0.2)';
                   }
                 }}
                 onMouseLeave={(e) => {
@@ -85,29 +84,29 @@ export default function Skills() {
                   }
                 }}
               >
-                <div style={{ fontWeight: 700, fontSize: '1.08rem', color: 'var(--text-primary)', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                    <IconComponent size={20} color="var(--accent-cyan)" style={{ flexShrink: 0 }} />
-                    <span>{skill.name}</span>
+                <div style={{ fontWeight: 700, fontSize: '0.92rem', color: 'var(--text-primary)', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '0.4rem' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', minWidth: 0 }}>
+                    <IconComponent size={16} color="var(--accent-cyan)" style={{ flexShrink: 0 }} />
+                    <span style={{ whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{skill.name}</span>
                   </div>
                   {isClickable && (
-                    <span style={{ fontSize: '0.75rem', padding: '0.15rem 0.5rem', borderRadius: 'var(--radius-full)', background: 'rgba(34, 211, 238, 0.15)', color: 'var(--accent-cyan)', fontWeight: 600 }}>
-                      Interactive ↗
+                    <span style={{ fontSize: '0.68rem', padding: '0.1rem 0.4rem', borderRadius: 'var(--radius-full)', background: 'rgba(34, 211, 238, 0.15)', color: 'var(--accent-cyan)', fontWeight: 600, flexShrink: 0 }}>
+                      Deck ↗
                     </span>
                   )}
                 </div>
 
                 {/* Tag-style Pills Row */}
-                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.4rem' }}>
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.3rem' }}>
                   {skill.bullets.map((bullet) => (
                     <span
                       key={bullet}
                       style={{
-                        padding: '0.25rem 0.65rem',
+                        padding: '0.15rem 0.45rem',
                         borderRadius: 'var(--radius-sm)',
                         background: 'rgba(255, 255, 255, 0.05)',
                         color: 'var(--accent-indigo)',
-                        fontSize: '0.78rem',
+                        fontSize: '0.72rem',
                         fontWeight: 600
                       }}
                     >
