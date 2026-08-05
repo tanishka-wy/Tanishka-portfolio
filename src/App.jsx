@@ -37,8 +37,14 @@ export default function App() {
       <Navbar theme={theme} toggleTheme={toggleTheme} />
       <main>
         <Hero addToast={addToast} />
-        <Skills />
-        <WorkExperience />
+
+        {/* Side-by-Side Skills and Work Experience */}
+        <section className="section-padding" style={{ background: 'var(--bg-secondary)', overflow: 'visible' }}>
+          <div className="container side-by-side-grid" style={{ overflow: 'visible' }}>
+            <Skills />
+            <WorkExperience />
+          </div>
+        </section>
         <Projects />
         <Education />
         <Contact addToast={addToast} />
