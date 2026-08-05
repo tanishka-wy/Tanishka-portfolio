@@ -29,7 +29,7 @@ export const WorkExperience = () => {
         }} />
 
         {experienceData.map((exp, index) => (
-          <div key={index} style={{ position: 'relative', flex: 1, display: 'flex', flexDirection: 'column' }}>
+          <div key={index} style={{ position: 'relative' }}>
             {/* Glowing Dot Marker */}
             <div style={{
               position: 'absolute',
@@ -49,12 +49,10 @@ export const WorkExperience = () => {
             <div
               className="glass-card"
               style={{
-                padding: '1.8rem',
+                padding: '1.5rem 1.8rem',
                 display: 'flex',
                 flexDirection: 'column',
-                gap: '1.2rem',
-                flex: 1,
-                justifyContent: 'space-between'
+                gap: '0.8rem'
               }}
             >
               {/* Header */}
