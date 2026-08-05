@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
-import Skills from './components/Skills';
 import Projects from './components/Projects';
 import Experience, { WorkExperience, Education } from './components/Experience';
 import Contact from './components/Contact';
@@ -37,14 +36,7 @@ export default function App() {
       <Navbar theme={theme} toggleTheme={toggleTheme} />
       <main>
         <Hero addToast={addToast} />
-
-        {/* Side-by-Side Equal Size Skills and Work Experience */}
-        <section className="section-padding" style={{ background: 'var(--bg-secondary)', overflow: 'visible' }}>
-          <div className="container side-by-side-grid" style={{ overflow: 'visible' }}>
-            <Skills />
-            <WorkExperience />
-          </div>
-        </section>
+        <WorkExperience />
         <Projects />
         <Education />
         <Contact addToast={addToast} />

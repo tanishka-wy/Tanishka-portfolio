@@ -4,20 +4,20 @@ import { experienceData, educationData } from '../data/portfolioData';
 
 export const WorkExperience = () => {
   return (
-    <div id="experience" style={{ height: '100%', display: 'flex', flexDirection: 'column', overflow: 'visible' }}>
-      <div className="section-header" style={{ textAlign: 'left', marginBottom: '1.5rem' }}>
-        <h2 className="section-title">Work Experience</h2>
-      </div>
+    <section id="experience" className="section-padding" style={{ background: 'var(--bg-secondary)' }}>
+      <div className="container">
+        <div className="section-header" style={{ marginBottom: '1.5rem' }}>
+          <h2 className="section-title">Work Experience</h2>
+        </div>
 
-      {/* Work Experience Vertical Timeline */}
-      <div style={{
-        position: 'relative',
-        paddingLeft: '2.5rem',
-        display: 'flex',
-        flexDirection: 'column',
-        gap: '1.8rem',
-        flex: 1
-      }}>
+        {/* Work Experience Vertical Timeline */}
+        <div style={{
+          position: 'relative',
+          paddingLeft: '2.5rem',
+          display: 'flex',
+          flexDirection: 'column',
+          gap: '1.8rem'
+        }}>
         {/* Vertical Connecting Line */}
         <div style={{
           position: 'absolute',
@@ -150,7 +150,8 @@ export const WorkExperience = () => {
         ))}
       </div>
     </div>
-  );
+  </section>
+);
 };
 
 export const Education = () => {
