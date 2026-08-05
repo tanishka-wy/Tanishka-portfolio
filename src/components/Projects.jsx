@@ -1,8 +1,33 @@
-import React from 'react';
-import { Award } from 'lucide-react';
+import React, { useState } from 'react';
+import { Award, ExternalLink, X, ChevronLeft, ChevronRight, FileText, Sparkles } from 'lucide-react';
 import { projectsData } from '../data/portfolioData';
 
 export default function Projects() {
+  const [selectedProject, setSelectedProject] = useState(null);
+  const [activeSlide, setActiveSlide] = useState(0);
+
+  const openProject = (project) => {
+    setSelectedProject(project);
+    setActiveSlide(0);
+  };
+
+  const closeProject = () => {
+    setSelectedProject(null);
+    setActiveSlide(0);
+  };
+
+  const nextSlide = () => {
+    if (selectedProject?.slides) {
+      setActiveSlide((prev) => (prev + 1) % selectedProject.slides.length);
+    }
+  };
+
+  const prevSlide = () => {
+    if (selectedProject?.slides) {
+      setActiveSlide((prev) => (prev - 1 + selectedProject.slides.length) % selectedProject.slides.length);
+    }
+  };
+
   return (
     <section id="projects" className="section-padding" style={{ background: 'var(--bg-secondary)' }}>
       <div className="container">
@@ -20,17 +45,28 @@ export default function Projects() {
             <div
               key={project.id}
               className="glass-card"
+              onClick={() => openProject(project)}
               style={{
                 display: 'flex',
                 flexDirection: 'column',
-                overflow: 'hidden'
+                overflow: 'hidden',
+                cursor: 'pointer',
+                transition: 'transform 0.2s ease, box-shadow 0.2s ease'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = 'translateY(-4px)';
+                e.currentTarget.style.boxShadow = '0 12px 24px rgba(34, 211, 238, 0.15)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = 'translateY(0)';
+                e.currentTarget.style.boxShadow = 'none';
               }}
             >
               {/* Image Preview Container */}
               <div style={{
                 position: 'relative',
                 width: '100%',
-                height: '140px',
+                height: '160px',
                 overflow: 'hidden',
                 background: 'var(--bg-secondary)'
               }}>
@@ -62,8 +98,9 @@ export default function Projects() {
 
               {/* Card Body */}
               <div style={{ padding: '1.2rem', flex: 1, display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-                <h3 style={{ fontSize: '1.15rem', color: 'var(--text-primary)', margin: 0 }}>
-                  {project.title}
+                <h3 style={{ fontSize: '1.15rem', color: 'var(--text-primary)', margin: 0, display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                  <span>{project.title}</span>
+                  <ExternalLink size={16} color="var(--accent-cyan)" />
                 </h3>
 
                 <p style={{
@@ -109,6 +146,171 @@ export default function Projects() {
           ))}
         </div>
       </div>
+
+      {/* Interactive Project Modal */}
+      {selectedProject && (
+        <div
+          style={{
+            position: 'fixed',
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            background: 'rgba(9, 13, 22, 0.85)',
+            backdropFilter: 'blur(10px)',
+            zIndex: 2000,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            padding: '1.5rem'
+          }}
+          onClick={closeProject}
+        >
+          <div
+            className="glass-card"
+            style={{
+              width: '100%',
+              maxWidth: '750px',
+              maxHeight: '90vh',
+              overflowY: 'auto',
+              padding: '2rem',
+              position: 'relative',
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '1.5rem',
+              border: '1px solid var(--accent-cyan)'
+            }}
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Close Button */}
+            <button
+              onClick={closeProject}
+              aria-label="Close modal"
+              style={{
+                position: 'absolute',
+                top: '1rem',
+                right: '1rem',
+                background: 'rgba(255, 255, 255, 0.1)',
+                border: 'none',
+                color: 'var(--text-primary)',
+                width: '36px',
+                height: '36px',
+                borderRadius: '50%',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                cursor: 'pointer'
+              }}
+            >
+              <X size={20} />
+            </button>
+
+            {/* Modal Header */}
+            <div>
+              <span style={{
+                padding: '0.25rem 0.75rem',
+                borderRadius: 'var(--radius-full)',
+                background: 'rgba(34, 211, 238, 0.15)',
+                color: 'var(--accent-cyan)',
+                fontSize: '0.8rem',
+                fontWeight: 600
+              }}>
+                {selectedProject.category}
+              </span>
+              <h2 style={{ fontSize: '1.6rem', color: 'var(--text-primary)', marginTop: '0.5rem', marginBottom: '0.4rem' }}>
+                {selectedProject.title}
+              </h2>
+              <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem', lineHeight: 1.6, margin: 0 }}>
+                {selectedProject.description}
+              </p>
+            </div>
+
+            {/* Interactive Slide Viewer (For Gamma Presentation) */}
+            {selectedProject.slides && selectedProject.slides.length > 0 && (
+              <div style={{
+                background: 'var(--bg-secondary)',
+                borderRadius: 'var(--radius-md)',
+                padding: '1.5rem',
+                border: '1px solid var(--border-color)',
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '1rem',
+                position: 'relative'
+              }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                  <span style={{ fontSize: '0.85rem', fontWeight: 700, color: 'var(--accent-cyan)', display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
+                    <Sparkles size={16} /> Slide {activeSlide + 1} of {selectedProject.slides.length} — {selectedProject.slides[activeSlide].subtitle}
+                  </span>
+                  <div style={{ display: 'flex', gap: '0.5rem' }}>
+                    <button
+                      onClick={prevSlide}
+                      className="btn btn-secondary"
+                      style={{ padding: '0.35rem 0.7rem', fontSize: '0.8rem' }}
+                    >
+                      <ChevronLeft size={16} /> Prev
+                    </button>
+                    <button
+                      onClick={nextSlide}
+                      className="btn btn-primary"
+                      style={{ padding: '0.35rem 0.7rem', fontSize: '0.8rem' }}
+                    >
+                      Next <ChevronRight size={16} />
+                    </button>
+                  </div>
+                </div>
+
+                <div style={{
+                  padding: '1.2rem',
+                  background: 'var(--bg-card)',
+                  borderRadius: 'var(--radius-sm)',
+                  borderLeft: '4px solid var(--accent-cyan)'
+                }}>
+                  <h3 style={{ fontSize: '1.2rem', color: 'var(--text-primary)', marginBottom: '0.6rem' }}>
+                    {selectedProject.slides[activeSlide].title}
+                  </h3>
+                  <div style={{ fontSize: '0.9rem', color: 'var(--text-secondary)', whiteSpace: 'pre-line', lineHeight: 1.6 }}>
+                    {selectedProject.slides[activeSlide].content}
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {/* Highlights */}
+            {selectedProject.highlights && (
+              <div>
+                <h4 style={{ fontSize: '0.9rem', color: 'var(--text-muted)', textTransform: 'uppercase', marginBottom: '0.6rem' }}>
+                  Key Highlights
+                </h4>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
+                  {selectedProject.highlights.map((h, i) => (
+                    <div key={i} style={{ fontSize: '0.88rem', color: 'var(--text-secondary)', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                      <span style={{ color: 'var(--accent-cyan)' }}>•</span> {h}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* Action Buttons */}
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem', marginTop: '0.5rem' }}>
+              {selectedProject.liveUrl && (
+                <a
+                  href={selectedProject.liveUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="btn btn-primary"
+                  style={{ gap: '0.5rem' }}
+                >
+                  <FileText size={16} /> Open Presentation / Link
+                </a>
+              )}
+              <button onClick={closeProject} className="btn btn-secondary">
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 }
