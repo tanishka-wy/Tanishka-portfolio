@@ -1,5 +1,5 @@
 import React from 'react';
-import { Cpu, Sparkles, Code2, FolderPlus, Server, Box, CheckCircle2, Database, FileCode2 } from 'lucide-react';
+import { Cpu, Sparkles, Code2, FolderPlus, Server, Box, CheckCircle2, Database, FileCode2, Figma } from 'lucide-react';
 import { groupedSkillsData } from '../data/portfolioData';
 
 const iconMap = {
@@ -11,7 +11,8 @@ const iconMap = {
   Box: Box,
   CheckCircle2: CheckCircle2,
   Database: Database,
-  FileCode2: FileCode2
+  FileCode2: FileCode2,
+  Figma: Figma
 };
 
 export default function Skills() {

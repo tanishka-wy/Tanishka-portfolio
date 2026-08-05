@@ -34,6 +34,7 @@ export const groupedSkillsData = [
     categoryTitle: "Design & AI Content Decks",
     skills: [
       { name: "Canva Design", icon: "Code2", description: "Social graphics · Brand banners · Infographics" },
+      { name: "Figma Design", icon: "Figma", description: "UI/UX mockups · Wireframing · Visual design" },
       { name: "Gamma (AI Decks)", icon: "FolderPlus", description: "AI deck generation · Pitch presentations · Visuals" }
     ]
   },
