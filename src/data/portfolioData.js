@@ -25,7 +25,7 @@ export const skillsData = [
   { name: "Agents & GenAI", category: "AI & Content Tools", icon: "Sparkles", bullets: ["AI agent workflows", "Prompt engineering", "GenAI tool integration"] },
   { name: "Search Engine Optimization (SEO)", category: "Digital Marketing & SEO", icon: "Sparkles", bullets: ["Keyword research", "On-page SEO", "Content optimization"] },
   { name: "Canva Design", category: "AI & Content Tools", icon: "Code2", bullets: ["Social media graphics", "Brand banners", "Infographics"] },
-  { name: "Gamma (AI Presentations)", category: "AI & Content Tools", icon: "FileCode2", bullets: ["AI deck generation", "Pitch presentations", "Interactive visuals"] },
+  { name: "Gamma (AI Presentations)", category: "AI & Content Tools", icon: "FolderPlus", bullets: ["AI deck generation", "Pitch presentations", "Interactive visuals", "File & folder management"] },
   { name: "Digital Marketing Media", category: "Digital Marketing & SEO", icon: "Server", bullets: ["Social media campaigns", "Brand awareness", "Post impressions"] },
   { name: "E-Commerce Marketing", category: "Digital Marketing & SEO", icon: "Box", bullets: ["Product promotion", "Conversion rate optimization"] },
   { name: "Client Management & Ops", category: "Management & Ops", icon: "CheckCircle2", bullets: ["Client communications", "Operational management", "Stakeholder updates"] },
