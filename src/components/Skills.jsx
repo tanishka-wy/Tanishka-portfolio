@@ -1,6 +1,6 @@
 import React from 'react';
-import { Cpu, Sparkles, Code2, FolderPlus, Server, Box, CheckCircle2, Database, FileCode2, CheckCircle } from 'lucide-react';
-import { skillsData } from '../data/portfolioData';
+import { Cpu, Sparkles, Code2, FolderPlus, Server, Box, CheckCircle2, Database, FileCode2 } from 'lucide-react';
+import { groupedSkillsData } from '../data/portfolioData';
 
 const iconMap = {
   Cpu: Cpu,
@@ -21,7 +21,7 @@ export default function Skills() {
         <h2 className="section-title">Skills</h2>
       </div>
 
-      {/* Single Glass Card Containing All Skills */}
+      {/* Single Glass Card Containing Grouped Skills */}
       <div
         className="glass-card"
         style={{
@@ -29,36 +29,65 @@ export default function Skills() {
           display: 'flex',
           flexDirection: 'column',
           gap: '1.4rem',
-          flex: 1
+          flex: 1,
+          justifyContent: 'space-between'
         }}
       >
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
-          gap: '1.2rem'
-        }}>
-          {skillsData.map((skill) => {
-            const IconComponent = iconMap[skill.icon] || Sparkles;
-            return (
-              <div key={skill.name} style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                  <IconComponent size={16} color="var(--accent-cyan)" style={{ flexShrink: 0 }} />
-                  <h3 style={{ fontSize: '0.98rem', fontWeight: 700, color: 'var(--text-primary)', margin: 0 }}>
-                    {skill.name}
-                  </h3>
-                </div>
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.3rem', paddingLeft: '1.3rem' }}>
-                  {skill.bullets.map((bullet, idx) => (
-                    <div key={idx} style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', fontSize: '0.84rem', color: 'var(--text-secondary)' }}>
-                      <CheckCircle size={12} color="var(--accent-cyan)" style={{ flexShrink: 0 }} />
-                      <span>{bullet}</span>
+        {groupedSkillsData.map((group) => (
+          <div key={group.categoryNumber} style={{ display: 'flex', flexDirection: 'column', gap: '0.8rem' }}>
+            <div style={{
+              fontSize: '0.85rem',
+              fontWeight: 700,
+              textTransform: 'uppercase',
+              letterSpacing: '0.05em',
+              color: 'var(--accent-cyan)',
+              borderBottom: '1px solid rgba(255, 255, 255, 0.08)',
+              paddingBottom: '0.4rem',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '0.5rem'
+            }}>
+              <span style={{
+                background: 'rgba(34, 211, 238, 0.15)',
+                color: 'var(--accent-cyan)',
+                width: '22px',
+                height: '22px',
+                borderRadius: '50%',
+                display: 'inline-flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                fontSize: '0.78rem',
+                fontWeight: 700
+              }}>
+                {group.categoryNumber}
+              </span>
+              {group.categoryTitle}
+            </div>
+
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
+              gap: '0.9rem'
+            }}>
+              {group.skills.map((skill) => {
+                const IconComponent = iconMap[skill.icon] || Sparkles;
+                return (
+                  <div key={skill.name} style={{ display: 'flex', flexDirection: 'column', gap: '0.2rem' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
+                      <IconComponent size={15} color="var(--accent-cyan)" style={{ flexShrink: 0 }} />
+                      <span style={{ fontSize: '0.94rem', fontWeight: 700, color: 'var(--text-primary)' }}>
+                        {skill.name}
+                      </span>
                     </div>
-                  ))}
-                </div>
-              </div>
-            );
-          })}
-        </div>
+                    <p style={{ fontSize: '0.84rem', color: 'var(--text-secondary)', margin: 0, paddingLeft: '1.2rem', lineHeight: 1.4 }}>
+                      {skill.description}
+                    </p>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   );

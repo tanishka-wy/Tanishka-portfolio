@@ -20,6 +20,36 @@ export const personalInfo = {
 
 export const skillCategories = ["All", "Digital Marketing & SEO", "AI & Content Tools", "Management & Ops"];
 
+export const groupedSkillsData = [
+  {
+    categoryNumber: 1,
+    categoryTitle: "AI & Automation",
+    skills: [
+      { name: "Agents & GenAI", icon: "Sparkles", description: "Agent workflows · Prompt engineering" },
+      { name: "ChatGPT & AI Prompting", icon: "Cpu", description: "AI thought partner · Content drafting · Research automation" }
+    ]
+  },
+  {
+    categoryNumber: 2,
+    categoryTitle: "Design & AI Content Decks",
+    skills: [
+      { name: "Canva Design", icon: "Code2", description: "Social graphics · Brand banners · Infographics" },
+      { name: "Gamma (AI Decks)", icon: "FolderPlus", description: "AI deck generation · Pitch presentations · Visuals" }
+    ]
+  },
+  {
+    categoryNumber: 3,
+    categoryTitle: "Digital Marketing & Operations",
+    skills: [
+      { name: "Digital Marketing", icon: "Server", description: "Social campaigns · Brand awareness" },
+      { name: "E-Commerce Marketing", icon: "Box", description: "Product promotion · CRO" },
+      { name: "SEO", icon: "Sparkles", description: "Keyword research · On-page SEO" },
+      { name: "Client Management", icon: "CheckCircle2", description: "Client comms · Ops management" },
+      { name: "MS Excel & Reporting", icon: "Database", description: "Data entry · Analytics tracking" }
+    ]
+  }
+];
+
 export const skillsData = [
   { name: "ChatGPT & AI Prompting", category: "AI & Content Tools", icon: "Cpu", bullets: ["AI as a thought partner", "Content drafting", "Research automation"] },
   { name: "Agents & GenAI", category: "AI & Content Tools", icon: "Sparkles", bullets: ["AI agent workflows", "Prompt engineering", "GenAI tool integration"] },
