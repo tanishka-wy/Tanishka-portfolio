@@ -20,33 +20,41 @@ export const personalInfo = {
 
 export const skillCategories = ["All", "Digital Marketing & SEO", "AI & Content Tools", "Management & Ops"];
 
-export const groupedSkillsData = [
+export const skillsCategoriesData = [
   {
-    categoryNumber: 1,
-    categoryTitle: "AI & Automation",
+    id: "ai-prompt-engineering",
+    title: "AI & Prompt Engineering",
+    icon: "Sparkles",
     skills: [
-      { name: "Agents & GenAI", icon: "Sparkles", description: "Agent workflows · Prompt engineering" },
-      { name: "ChatGPT & AI Prompting", icon: "Cpu", description: "AI thought partner · Content drafting · Research automation" }
+      "Prompt Engineering",
+      "AI Agents",
+      "Claude Skills",
+      "Claude Agent SDK",
+      "Google Gemini",
+      "ChatGPT"
     ]
   },
   {
-    categoryNumber: 2,
-    categoryTitle: "Design & AI Content Decks",
+    id: "design-content-tools",
+    title: "Design & Content Tools",
+    icon: "Palette",
     skills: [
-      { name: "Canva Design", icon: "Code2", description: "Social graphics · Brand banners · Infographics" },
-      { name: "Figma Design", icon: "Figma", description: "UI/UX mockups · Wireframing · Visual design" },
-      { name: "Gamma (AI Decks)", icon: "FolderPlus", description: "AI deck generation · Pitch presentations · Visuals" }
+      "Image Generation",
+      "Adobe Express",
+      "Figma",
+      "Canva",
+      "Gamma"
     ]
   },
   {
-    categoryNumber: 3,
-    categoryTitle: "Digital Marketing & Operations",
+    id: "marketing-growth",
+    title: "Marketing & Growth",
+    icon: "TrendingUp",
     skills: [
-      { name: "Digital Marketing", icon: "Server", description: "Social campaigns · Brand awareness" },
-      { name: "E-Commerce Marketing", icon: "Box", description: "Product promotion · CRO" },
-      { name: "SEO", icon: "Sparkles", description: "Keyword research · On-page SEO" },
-      { name: "Client Management", icon: "CheckCircle2", description: "Client comms · Ops management" },
-      { name: "MS Excel & Reporting", icon: "Database", description: "Data entry · Analytics tracking" }
+      "SEO",
+      "E-Commerce",
+      "Digital Marketing Media",
+      "Digital Marketing Communications"
     ]
   }
 ];

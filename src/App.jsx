@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
+import Skills from './components/Skills';
 import Projects from './components/Projects';
 import Experience, { WorkExperience, Education } from './components/Experience';
 import Contact from './components/Contact';
@@ -36,6 +37,7 @@ export default function App() {
       <Navbar theme={theme} toggleTheme={toggleTheme} />
       <main>
         <Hero addToast={addToast} />
+        <Skills />
         <WorkExperience />
         <Projects />
         <Education />
