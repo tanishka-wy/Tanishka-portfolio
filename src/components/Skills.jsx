@@ -43,18 +43,18 @@ export default function Skills() {
   };
 
   return (
-    <section id="skills" className="section-padding" style={{ background: 'var(--bg-secondary)' }}>
-      <div className="container">
-        <div className="section-header" style={{ marginBottom: '1.5rem' }}>
-          <h2 className="section-title">Skills</h2>
-        </div>
+    <div id="skills" style={{ height: '100%', display: 'flex', flexDirection: 'column', overflow: 'visible' }}>
+      <div className="section-header" style={{ textAlign: 'left', marginBottom: '1.5rem' }}>
+        <h2 className="section-title">Skills</h2>
+      </div>
 
-        {/* Skills Grid */}
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))',
-          gap: '1.5rem'
-        }}>
+      {/* Skills Grid */}
+      <div style={{
+        display: 'grid',
+        gridTemplateColumns: 'repeat(auto-fill, minmax(240px, 1fr))',
+        gap: '1.2rem',
+        flex: 1
+      }}>
           {skillsData.map((skill) => {
             const IconComponent = iconMap[skill.icon] || Sparkles;
             const isClickable = skill.interactive || skill.slides;
@@ -119,7 +119,6 @@ export default function Skills() {
             );
           })}
         </div>
-      </div>
 
       {/* Interactive Presentation Modal for Skills */}
       {selectedSkill && selectedSkill.slides && (
@@ -267,6 +266,6 @@ export default function Skills() {
           </div>
         </div>
       )}
-    </section>
+    </div>
   );
 }
