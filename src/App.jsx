@@ -3,7 +3,7 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Skills from './components/Skills';
 import Projects from './components/Projects';
-import Experience from './components/Experience';
+import Experience, { WorkExperience, Education } from './components/Experience';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import Toast from './components/Toast';
@@ -37,18 +37,25 @@ export default function App() {
       <Navbar theme={theme} toggleTheme={toggleTheme} />
       <main>
         <Hero addToast={addToast} />
+
+        {/* Side-by-Side Skills and Work Experience */}
         <section className="section-padding" style={{ background: 'var(--bg-secondary)', overflow: 'visible' }}>
-          <div className="container" style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-            gap: '3.5rem',
-            alignItems: 'start',
-            overflow: 'visible'
-          }}>
-            <Skills />
-            <Experience />
+          <div className="container" style={{ display: 'flex', flexDirection: 'column', gap: '3.5rem', overflow: 'visible' }}>
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+              gap: '3.5rem',
+              alignItems: 'start',
+              overflow: 'visible'
+            }}>
+              <Skills />
+              <WorkExperience />
+            </div>
+
+            <Education />
           </div>
         </section>
+
         <Projects />
         <Contact addToast={addToast} />
       </main>
