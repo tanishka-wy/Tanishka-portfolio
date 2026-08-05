@@ -39,21 +39,8 @@ export default function Navbar({ theme, toggleTheme }) {
       }}
     >
       <div className="container" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-        {/* Brand Name & Profile Avatar on Top Left */}
-        <a href="#hero" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '0.65rem' }}>
-          <img
-            src="/assets/profile.jpg"
-            alt="Tanishka Sharma"
-            style={{
-              width: '34px',
-              height: '34px',
-              borderRadius: '50%',
-              objectFit: 'cover',
-              border: '2px solid var(--accent-cyan)',
-              boxShadow: '0 0 8px rgba(34, 211, 238, 0.4)',
-              flexShrink: 0
-            }}
-          />
+        {/* Brand Name on Top Left */}
+        <a href="#hero" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center' }}>
           <span style={{
             fontWeight: 800,
             fontSize: '1.2rem',
