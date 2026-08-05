@@ -25,64 +25,13 @@ export const skillsData = [
   { name: "Agents & GenAI", category: "AI & Content Tools", icon: "Sparkles", bullets: ["AI agent workflows", "Prompt engineering", "GenAI tool integration"] },
   { name: "Search Engine Optimization (SEO)", category: "Digital Marketing & SEO", icon: "Sparkles", bullets: ["Keyword research", "On-page SEO", "Content optimization"] },
   { name: "Canva Design", category: "AI & Content Tools", icon: "Code2", bullets: ["Social media graphics", "Brand banners", "Infographics"] },
-  { name: "Gamma (AI Presentations)", category: "AI & Content Tools", icon: "FolderPlus", bullets: ["AI deck generation", "Pitch presentations", "Interactive visuals", "File & folder management"] },
-  { name: "Digital Marketing Media", category: "Digital Marketing & SEO", icon: "Server", bullets: ["Social media campaigns", "Brand awareness", "Post impressions"] },
-  { name: "E-Commerce Marketing", category: "Digital Marketing & SEO", icon: "Box", bullets: ["Product promotion", "Conversion rate optimization"] },
-  { name: "Client Management & Ops", category: "Management & Ops", icon: "CheckCircle2", bullets: ["Client communications", "Operational management", "Stakeholder updates"] },
-  { name: "MS Excel & Computer Skills", category: "Management & Ops", icon: "Database", bullets: ["Data entry", "Campaign analytics tracking", "Spreadsheet reporting"] },
-];
-
-export const projectCategories = ["All", "AI Content", "Digital Marketing"];
-
-export const projectsData = [
   {
-    id: "ai-future-work",
-    title: "AI & The Future of Work Campaign",
-    category: "AI Content",
-    image: "/assets/project1.jpg",
-    summary: "Viral content series exploring Human-AI collaboration, productivity shifts, and workforce transformation.",
-    description: "Designed and executed a high-impact digital campaign on 'AI & The Future of Work', highlighting 3 actionable ways top teams leverage AI as a thought partner. Featured interactive visuals, carousel slides, and deep engagement across professional networks.",
-    tags: ["ChatGPT", "Canva", "Digital Marketing", "AI Productivity", "Content Strategy"],
-    metrics: "Generated 1,000+ organic impressions and high engagement rate",
-    liveUrl: "https://linkedin.com",
-    githubUrl: "https://github.com/tanishka-wy",
-    featured: true,
-    highlights: [
-      "Human-AI collaboration framework for modern workflow efficiency",
-      "Custom Canva infographic graphics tailored for LinkedIn audience",
-      "Thought leadership content driving 3.9x higher profile visibility"
-    ]
-  },
-  {
-    id: "techpath-seo-growth",
-    title: "Techpath Digital Marketing & SEO Optimization",
-    category: "Digital Marketing",
-    image: "/assets/project2.jpg",
-    summary: "Comprehensive SEO audit, keyword targeting, and social media strategy for Techpath Research & Development PVT.",
-    description: "Spearheaded digital marketing initiatives for Techpath R&D agency clients. Executed targeted SEO strategies, social media communications, and e-commerce channel growth to boost brand reach and online inquiry volume.",
-    tags: ["SEO", "Digital Marketing Media", "E-Commerce", "Client Management", "MS Excel"],
-    metrics: "Increased search impressions and profile search appearances",
-    liveUrl: "https://techpath.biz/",
-    githubUrl: "https://github.com/tanishka-wy",
-    featured: true,
-    highlights: [
-      "On-page keyword placement optimizing brand search indexing",
-      "Cross-platform content schedule across LinkedIn and web media",
-      "Client reporting dashboard tracking impressions and profile views"
-    ]
-  },
-  {
-    id: "gamma-meta-ads-policy-2026",
-    title: "Meta Ads Policy 2026 — AI Presentation (Gamma)",
-    category: "AI Content",
-    image: "/assets/project3.jpg",
-    summary: "Interactive 10-slide AI presentation deck created with Gamma on Meta Ads Policy 2026 compliance, personal attributes, and multimodal enforcement.",
-    description: "Designed a comprehensive 10-slide presentation deck using Gamma (AI Presentation Tool) covering Meta's 2026 Ad Policies, Prohibited Personal Attributes, Multimodal AI Enforcement System, Mandatory AI Content Disclosures, and Health & Wellness Policy updates.",
-    tags: ["Gamma", "AI Presentations", "Meta Ads", "Digital Marketing", "Compliance Guide"],
-    metrics: "10 Interactive Slides • Full Policy Guide",
-    liveUrl: "/assets/meta_ads_policy_2026.pdf",
-    githubUrl: "https://github.com/tanishka-wy",
-    featured: true,
+    name: "Gamma (AI Presentations)",
+    category: "AI & Content Tools",
+    icon: "FolderPlus",
+    interactive: true,
+    pdfUrl: "/assets/meta_ads_policy_2026.pdf",
+    bullets: ["AI deck generation", "Pitch presentations", "Interactive visuals", "File & folder management (Click to view deck)"],
     slides: [
       {
         slideNumber: 1,
@@ -144,11 +93,51 @@ export const projectsData = [
         subtitle: "SPECIAL CATEGORIES",
         content: "Housing, Employment & Credit — the strictest targeting restrictions in the Meta ecosystem, now expanded with new category inclusions.\n\n• Auto-Detection: Multimodal image + text + landing page scan\n• Location Targeting: Minimum 15km radius required. City-level exclusions prohibited\n• Audience Restrictions: Lookalike audiences disabled — broad targeting only\n• NEW in 2026: BNPL, crypto lending & student loans now require HEC category selection"
       }
-    ],
+    ]
+  },
+  { name: "Digital Marketing Media", category: "Digital Marketing & SEO", icon: "Server", bullets: ["Social media campaigns", "Brand awareness", "Post impressions"] },
+  { name: "E-Commerce Marketing", category: "Digital Marketing & SEO", icon: "Box", bullets: ["Product promotion", "Conversion rate optimization"] },
+  { name: "Client Management & Ops", category: "Management & Ops", icon: "CheckCircle2", bullets: ["Client communications", "Operational management", "Stakeholder updates"] },
+  { name: "MS Excel & Computer Skills", category: "Management & Ops", icon: "Database", bullets: ["Data entry", "Campaign analytics tracking", "Spreadsheet reporting"] },
+];
+
+export const projectCategories = ["All", "AI Content", "Digital Marketing"];
+
+export const projectsData = [
+  {
+    id: "ai-future-work",
+    title: "AI & The Future of Work Campaign",
+    category: "AI Content",
+    image: "/assets/project1.jpg",
+    summary: "Viral content series exploring Human-AI collaboration, productivity shifts, and workforce transformation.",
+    description: "Designed and executed a high-impact digital campaign on 'AI & The Future of Work', highlighting 3 actionable ways top teams leverage AI as a thought partner. Featured interactive visuals, carousel slides, and deep engagement across professional networks.",
+    tags: ["ChatGPT", "Canva", "Digital Marketing", "AI Productivity", "Content Strategy"],
+    metrics: "Generated 1,000+ organic impressions and high engagement rate",
+    liveUrl: "https://linkedin.com",
+    githubUrl: "https://github.com/tanishka-wy",
+    featured: true,
     highlights: [
-      "Created with Gamma AI Presentation Generator",
-      "Comprehensive 10-slide Meta Ads Policy 2026 compliance guide",
-      "Includes PDF download and interactive slide viewer"
+      "Human-AI collaboration framework for modern workflow efficiency",
+      "Custom Canva infographic graphics tailored for LinkedIn audience",
+      "Thought leadership content driving 3.9x higher profile visibility"
+    ]
+  },
+  {
+    id: "techpath-seo-growth",
+    title: "Techpath Digital Marketing & SEO Optimization",
+    category: "Digital Marketing",
+    image: "/assets/project2.jpg",
+    summary: "Comprehensive SEO audit, keyword targeting, and social media strategy for Techpath Research & Development PVT.",
+    description: "Spearheaded digital marketing initiatives for Techpath R&D agency clients. Executed targeted SEO strategies, social media communications, and e-commerce channel growth to boost brand reach and online inquiry volume.",
+    tags: ["SEO", "Digital Marketing Media", "E-Commerce", "Client Management", "MS Excel"],
+    metrics: "Increased search impressions and profile search appearances",
+    liveUrl: "https://techpath.biz/",
+    githubUrl: "https://github.com/tanishka-wy",
+    featured: true,
+    highlights: [
+      "On-page keyword placement optimizing brand search indexing",
+      "Cross-platform content schedule across LinkedIn and web media",
+      "Client reporting dashboard tracking impressions and profile views"
     ]
   }
 ];
