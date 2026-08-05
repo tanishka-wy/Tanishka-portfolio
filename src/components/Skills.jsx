@@ -16,7 +16,7 @@ const iconMap = {
 
 export default function Skills() {
   return (
-    <div id="skills" style={{ height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', overflow: 'visible' }}>
+    <div id="skills" style={{ height: '100%', display: 'flex', flexDirection: 'column', overflow: 'visible' }}>
       <div className="section-header" style={{ textAlign: 'left', marginBottom: '1.5rem' }}>
         <h2 className="section-title">Skills</h2>
       </div>
@@ -24,10 +24,8 @@ export default function Skills() {
       {/* Skills Grid */}
       <div style={{
         display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fill, minmax(240px, 1fr))',
-        gap: '1.2rem',
-        flex: 1,
-        alignContent: 'space-between'
+        gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr))',
+        gap: '1.2rem'
       }}>
         {skillsData.map((skill) => {
           const IconComponent = iconMap[skill.icon] || Sparkles;
