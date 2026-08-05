@@ -16,10 +16,10 @@ export default function Navbar({ theme, toggleTheme }) {
 
   const navLinks = [
     { name: 'Home', href: '#hero' },
-    { name: 'About', href: '#hero' },
     { name: 'Skills', href: '#skills' },
+    { name: 'Work Experience', href: '#experience' },
     { name: 'Projects', href: '#projects' },
-    { name: 'Experience', href: '#experience' },
+    { name: 'Education', href: '#education' },
     { name: 'Contact', href: '#contact' },
   ];
 

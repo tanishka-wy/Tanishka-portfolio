@@ -4,7 +4,7 @@ import { projectsData } from '../data/portfolioData';
 
 export default function Projects() {
   return (
-    <section id="projects" className="section-padding">
+    <section id="projects" className="section-padding" style={{ background: 'var(--bg-secondary)' }}>
       <div className="container">
         <div className="section-header" style={{ marginBottom: '1.5rem' }}>
           <h2 className="section-title">Featured Projects</h2>
