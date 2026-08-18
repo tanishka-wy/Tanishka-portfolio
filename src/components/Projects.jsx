@@ -41,7 +41,7 @@ export default function Projects() {
         </div>
 
         {/* Category Filter Tabs */}
-        {projectCategories && projectCategories.length > 0 && (
+        {projectCategories && projectCategories.length > 2 && (
           <div style={{
             display: 'flex',
             gap: '0.6rem',

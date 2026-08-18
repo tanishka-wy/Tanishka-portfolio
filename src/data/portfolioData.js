@@ -71,7 +71,7 @@ export const skillsData = [
   { name: "MS Excel & Computer Skills", category: "Management & Ops", icon: "Database", bullets: ["Data entry", "Campaign analytics tracking", "Spreadsheet reporting"] },
 ];
 
-export const projectCategories = ["All", "AI Content", "Digital Marketing", "Policy & Strategy"];
+export const projectCategories = ["All", "Policy & Strategy"];
 
 export const projectsData = [
   {
@@ -90,42 +90,6 @@ export const projectsData = [
       "Key 2026 Meta Advertising Policy updates, restricted content rules, and compliance criteria",
       "Ad account health preservation and rejection prevention strategies for media buyers",
       "Practical guidelines for writing compliant ad copy and designing high-performing creative assets"
-    ]
-  },
-  {
-    id: "ai-future-work",
-    title: "AI & The Future of Work Campaign",
-    category: "AI Content",
-    image: "/assets/project1.jpg",
-    summary: "Viral content series exploring Human-AI collaboration, productivity shifts, and workforce transformation.",
-    description: "Designed and executed a high-impact digital campaign on 'AI & The Future of Work', highlighting 3 actionable ways top teams leverage AI as a thought partner. Featured interactive visuals, carousel slides, and deep engagement across professional networks.",
-    tags: ["ChatGPT", "Canva", "Digital Marketing", "AI Productivity", "Content Strategy"],
-    metrics: "Generated 1,000+ organic impressions and high engagement rate",
-    liveUrl: "https://linkedin.com",
-    githubUrl: "https://github.com/tanishka-wy",
-    featured: true,
-    highlights: [
-      "Human-AI collaboration framework for modern workflow efficiency",
-      "Custom Canva infographic graphics tailored for LinkedIn audience",
-      "Thought leadership content driving 3.9x higher profile visibility"
-    ]
-  },
-  {
-    id: "techpath-seo-growth",
-    title: "Techpath Digital Marketing & SEO Optimization",
-    category: "Digital Marketing",
-    image: "/assets/project2.jpg",
-    summary: "Comprehensive SEO audit, keyword targeting, and social media strategy for Techpath Research & Development PVT.",
-    description: "Spearheaded digital marketing initiatives for Techpath R&D agency clients. Executed targeted SEO strategies, social media communications, and e-commerce channel growth to boost brand reach and online inquiry volume.",
-    tags: ["SEO", "Digital Marketing Media", "E-Commerce", "Client Management", "MS Excel"],
-    metrics: "Increased search impressions and profile search appearances",
-    liveUrl: "https://techpath.biz/",
-    githubUrl: "https://github.com/tanishka-wy",
-    featured: true,
-    highlights: [
-      "On-page keyword placement optimizing brand search indexing",
-      "Cross-platform content schedule across LinkedIn and web media",
-      "Client reporting dashboard tracking impressions and profile views"
     ]
   }
 ];
