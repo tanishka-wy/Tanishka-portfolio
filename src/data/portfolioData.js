@@ -71,9 +71,27 @@ export const skillsData = [
   { name: "MS Excel & Computer Skills", category: "Management & Ops", icon: "Database", bullets: ["Data entry", "Campaign analytics tracking", "Spreadsheet reporting"] },
 ];
 
-export const projectCategories = ["All", "AI Content", "Digital Marketing"];
+export const projectCategories = ["All", "AI Content", "Digital Marketing", "Policy & Strategy"];
 
 export const projectsData = [
+  {
+    id: "meta-ads-policy-2026",
+    title: "Meta Ads Policy 2026 Reference Guide",
+    category: "Policy & Strategy",
+    image: "/assets/meta_ads_policy_thumb.jpg",
+    summary: "Comprehensive guide & compliance framework for Meta advertising policies, brand safety, and ad optimization in 2026.",
+    description: "In-depth policy reference guide analyzing Meta's 2026 advertising standards, restricted content guidelines, brand safety protocols, and actionable strategies for creating compliant, high-converting ad copy and media assets.",
+    tags: ["Meta Ads Policy", "PDF Guide", "Digital Marketing", "Ad Compliance", "Brand Safety"],
+    metrics: "Official PDF Documentation",
+    liveUrl: "/Meta-Ads-Policy-2026.pdf",
+    pdfUrl: "/Meta-Ads-Policy-2026.pdf",
+    featured: true,
+    highlights: [
+      "Key 2026 Meta Advertising Policy updates, restricted content rules, and compliance criteria",
+      "Ad account health preservation and rejection prevention strategies for media buyers",
+      "Practical guidelines for writing compliant ad copy and designing high-performing creative assets"
+    ]
+  },
   {
     id: "ai-future-work",
     title: "AI & The Future of Work Campaign",

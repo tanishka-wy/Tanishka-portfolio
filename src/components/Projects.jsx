@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import { Award, ExternalLink, X, ChevronLeft, ChevronRight, FileText, Sparkles } from 'lucide-react';
-import { projectsData } from '../data/portfolioData';
+import { Award, ExternalLink, X, ChevronLeft, ChevronRight, FileText, Sparkles, Download, Eye } from 'lucide-react';
+import { projectsData, projectCategories } from '../data/portfolioData';
 
 export default function Projects() {
   const [selectedProject, setSelectedProject] = useState(null);
   const [activeSlide, setActiveSlide] = useState(0);
+  const [selectedCategory, setSelectedCategory] = useState('All');
 
   const openProject = (project) => {
     setSelectedProject(project);
@@ -28,6 +29,10 @@ export default function Projects() {
     }
   };
 
+  const filteredProjects = selectedCategory === 'All' 
+    ? projectsData 
+    : projectsData.filter((p) => p.category === selectedCategory);
+
   return (
     <section id="projects" className="section-padding" style={{ background: 'var(--bg-secondary)' }}>
       <div className="container">
@@ -35,13 +40,45 @@ export default function Projects() {
           <h2 className="section-title">Featured Projects</h2>
         </div>
 
+        {/* Category Filter Tabs */}
+        {projectCategories && projectCategories.length > 0 && (
+          <div style={{
+            display: 'flex',
+            gap: '0.6rem',
+            flexWrap: 'wrap',
+            marginBottom: '2rem',
+            justifyContent: 'center'
+          }}>
+            {projectCategories.map((category) => (
+              <button
+                key={category}
+                onClick={() => setSelectedCategory(category)}
+                style={{
+                  padding: '0.45rem 1.1rem',
+                  borderRadius: 'var(--radius-full)',
+                  fontSize: '0.85rem',
+                  fontWeight: 600,
+                  cursor: 'pointer',
+                  border: '1px solid',
+                  borderColor: selectedCategory === category ? 'var(--accent-cyan)' : 'rgba(255, 255, 255, 0.1)',
+                  background: selectedCategory === category ? 'rgba(34, 211, 238, 0.15)' : 'var(--bg-card)',
+                  color: selectedCategory === category ? 'var(--accent-cyan)' : 'var(--text-secondary)',
+                  transition: 'all 0.2s ease'
+                }}
+              >
+                {category}
+              </button>
+            ))}
+          </div>
+        )}
+
         {/* Projects Grid */}
         <div style={{
           display: 'grid',
           gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
           gap: '1.5rem'
         }}>
-          {projectsData.map((project) => (
+          {filteredProjects.map((project) => (
             <div
               key={project.id}
               className="glass-card"
@@ -170,7 +207,7 @@ export default function Projects() {
             className="glass-card"
             style={{
               width: '100%',
-              maxWidth: '750px',
+              maxWidth: '780px',
               maxHeight: '90vh',
               overflowY: 'auto',
               padding: '2rem',
@@ -225,7 +262,44 @@ export default function Projects() {
               </p>
             </div>
 
-            {/* Interactive Slide Viewer (For Gamma Presentation) */}
+            {/* Embedded PDF Viewer */}
+            {selectedProject.pdfUrl && (
+              <div style={{
+                background: 'var(--bg-secondary)',
+                borderRadius: 'var(--radius-md)',
+                padding: '1rem',
+                border: '1px solid var(--border-color)',
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '0.8rem'
+              }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                  <span style={{ fontSize: '0.85rem', fontWeight: 700, color: 'var(--accent-cyan)', display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
+                    <FileText size={16} /> PDF Document Preview
+                  </span>
+                  <a
+                    href={selectedProject.pdfUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="btn btn-secondary"
+                    style={{ padding: '0.35rem 0.75rem', fontSize: '0.8rem', display: 'inline-flex', alignItems: 'center', gap: '0.4rem' }}
+                  >
+                    <ExternalLink size={14} /> Open Full PDF
+                  </a>
+                </div>
+                <div style={{ width: '100%', height: '380px', borderRadius: 'var(--radius-sm)', overflow: 'hidden', border: '1px solid rgba(255, 255, 255, 0.1)' }}>
+                  <iframe
+                    src={`${selectedProject.pdfUrl}#toolbar=0`}
+                    title={selectedProject.title}
+                    width="100%"
+                    height="100%"
+                    style={{ border: 'none' }}
+                  />
+                </div>
+              </div>
+            )}
+
+            {/* Interactive Slide Viewer (For Presentations) */}
             {selectedProject.slides && selectedProject.slides.length > 0 && (
               <div style={{
                 background: 'var(--bg-secondary)',
@@ -293,7 +367,27 @@ export default function Projects() {
 
             {/* Action Buttons */}
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem', marginTop: '0.5rem' }}>
-              {selectedProject.liveUrl && (
+              {selectedProject.pdfUrl ? (
+                <>
+                  <a
+                    href={selectedProject.pdfUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="btn btn-primary"
+                    style={{ gap: '0.5rem' }}
+                  >
+                    <Eye size={16} /> View PDF Document
+                  </a>
+                  <a
+                    href={selectedProject.pdfUrl}
+                    download="Meta-Ads-Policy-2026.pdf"
+                    className="btn btn-secondary"
+                    style={{ gap: '0.5rem' }}
+                  >
+                    <Download size={16} /> Download PDF
+                  </a>
+                </>
+              ) : selectedProject.liveUrl ? (
                 <a
                   href={selectedProject.liveUrl}
                   target="_blank"
@@ -303,7 +397,7 @@ export default function Projects() {
                 >
                   <FileText size={16} /> Open Presentation / Link
                 </a>
-              )}
+              ) : null}
               <button onClick={closeProject} className="btn btn-secondary">
                 Close
               </button>
