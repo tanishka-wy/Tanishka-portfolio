@@ -166,7 +166,7 @@ export default function Hero({ addToast }) {
             marginBottom: '1.5rem',
             width: '100%'
           }}>
-            🎓 <a href="https://www.bhu.ac.in/Site/Home/1_2_16_Main-Site" target="_blank" rel="noreferrer" style={{ color: 'var(--text-primary)', textDecoration: 'none', borderBottom: '1px dotted var(--accent-cyan)' }}><strong>BHU Graduate (2024)</strong></a> • 🏢 <strong>Techpath R&D Intern</strong>
+            🎓 <a href="https://www.bhu.ac.in/Site/Home/1_2_16_Main-Site" target="_blank" rel="noreferrer" style={{ color: 'var(--text-primary)', textDecoration: 'none', borderBottom: '1px dotted var(--accent-cyan)' }}><strong>BHU Graduate (2024)</strong></a> • 🏢 <a href="https://techpath.biz/" target="_blank" rel="noreferrer" style={{ color: 'var(--text-primary)', textDecoration: 'none', borderBottom: '1px dotted var(--accent-cyan)' }}><strong>Techpath R&D Intern</strong></a>
           </div>
 
           {/* Quick Metrics Grid */}
